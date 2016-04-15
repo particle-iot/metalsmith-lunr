@@ -10,10 +10,10 @@
   "license": "MIT",
   "dependencies": {
     "cheerio": "^0.19.0",
-    "lunr": "^0.5.4"
+    "lunr": "^0.7.0"
   },
   "devDependencies": {
-    "metalsmith": "^0.9.0",
+    "metalsmith": "^1.7.0",
     "mocha": "^1.21.4"
   },
   "repository": {

@@ -22,7 +22,7 @@ describe('metalsmith-lunr', function(){
       .use(lunr())
       .build(function(err, files){
         if (err) return done(err);
-        index = JSON.parse(files['searchIndex.json'].contents);
+        index = JSON.parse(files['searchIndex.json'].contents).index;
         assert.equal(index.ref, 'filePath');
         assert.equal(index.fields[0].name, 'contents');
         done();
@@ -39,7 +39,7 @@ describe('metalsmith-lunr', function(){
       }))
       .build(function(err, files){
         if (err) return done(err);
-        index = JSON.parse(files['index.json'].contents);
+        index = JSON.parse(files['index.json'].contents).index;
         assert.equal(index.ref, 'title');
         assert.equal(index.fields.length, 3);
         assert.equal(index.fields[0].name, 'title');
@@ -56,7 +56,7 @@ describe('metalsmith-lunr', function(){
       .use(lunr())
       .build(function(err, files){
         if (err) return done(err);
-        index = JSON.parse(files['searchIndex.json'].contents);
+        index = JSON.parse(files['searchIndex.json'].contents).index;
         assert.equal(index.documentStore.length, 2);
         done();
       });
